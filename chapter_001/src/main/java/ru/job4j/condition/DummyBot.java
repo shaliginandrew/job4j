@@ -18,5 +18,5 @@ public class DummyBot {
              String question = "Пока";
              System.out.println(DummyBot.answer(question));
 
-        }
+    }
     }
