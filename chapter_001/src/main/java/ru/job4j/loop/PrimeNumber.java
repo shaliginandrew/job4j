@@ -12,7 +12,6 @@ public class PrimeNumber {
     }
 
     public static void main(String[] args) {
-        int ammountOfPrime=calc(5);
-        System.out.println(ammountOfPrime);
+        System.out.println(calc(5));
     }
 }
