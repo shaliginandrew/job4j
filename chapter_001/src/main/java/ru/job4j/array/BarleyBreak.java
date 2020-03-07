@@ -7,7 +7,7 @@ public class BarleyBreak {
         for (int i=0;i<3;i++)
             for (int j=0;j<3;j++) {
                     table[i][j] = k;
-                    System.out.println(table[i][j]);
+                    System.out.println("table"+"["+i+"]"+"["+j+"]"+"="+table[i][j]);
                     k++;
              }
 
