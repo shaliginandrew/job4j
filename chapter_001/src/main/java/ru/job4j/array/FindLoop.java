@@ -12,9 +12,20 @@ public class FindLoop {
         return rst;
     }
 
+    public static int indexOf(int[] data, int el, int start, int finish) {
+        int rst = -1; // если элемента нет в массиве, то возвращаем -1.
+        for (int index=start;index<=finish;index++) {
+            if (data[index] == el) {
+                rst = index;
+                break;
+            }
+        }
+        return rst;
+    }
+
     public static void main(String[] args) {
        int[] data=new int[] {1,5,14,23,78,155,45} ;
-       int resultat=indexOf(data,23);
+       int resultat=indexOf(data,23,4,6);
         System.out.println(resultat);
     }
 }
