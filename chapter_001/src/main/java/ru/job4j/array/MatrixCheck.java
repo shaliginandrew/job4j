@@ -30,17 +30,29 @@ public class MatrixCheck {
         return result;
     }
 
+    public static char[] extractDiagonal(char[][] board) {
+        System.out.println("Заполнить одномерный массив элементами диагонали: ");
+        char[] rsl = new char[board.length];
+        for ( int i=0;i<board.length;i++ ) {
+            rsl[i] = board[i][i];
+            System.out.println(rsl[i]);
+        }
+        return rsl;
+    }
+
     public static void main(String[] args) {
 
         char[][] board = new char[][] {
-                {'r', 'X', 'j'},
-                {'м','X','f'},
-                {'f', 'X', 't'}
+                {'d', 's', 'j'},
+                {'м','d','f'},
+                {'f', 'z', 'd'}
         };
         boolean result=MatrixCheck.monoHorizontal(board,1);
         System.out.println("Все одинаковые символы в строке: "+result);
+
         boolean result2=MatrixCheck.monoVertical(board,1);
         System.out.println("Все одинаковые символы в столбце: "+result2);
 
+        MatrixCheck.extractDiagonal(board);
     }
 }
