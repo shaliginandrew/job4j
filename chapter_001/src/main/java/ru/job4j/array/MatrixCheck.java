@@ -19,7 +19,7 @@ public class MatrixCheck {
     public static boolean monoVertical(char[][] board, int column) {
         boolean result = false;
         int count=0;
-        for (int i=0;i<3.;i++ ) {
+        for (int i=0;i<board[0].length;i++ ) {
             if (board[i][column] == 'X') {
                 count++;
             }
@@ -40,12 +40,27 @@ public class MatrixCheck {
         return rsl;
     }
 
+    public static boolean isWin(char[][] board2) {
+        boolean result = false;
+        for ( int i=0;i<5;i++) {
+            if (board2[i][i] == 'X') {
+                if (monoHorizontal(board2, i) || monoVertical(board2, i)) {
+                    result = true;
+                    break;
+                }
+            }
+
+
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
         char[][] board = new char[][] {
-                {'d', 's', 'j'},
-                {'м','d','f'},
-                {'f', 'z', 'd'}
+                {'s', 'X', 's'},
+                {'u','X','f'},
+                {'d', 'X', 'd'}
         };
         boolean result=MatrixCheck.monoHorizontal(board,1);
         System.out.println("Все одинаковые символы в строке: "+result);
@@ -54,5 +69,19 @@ public class MatrixCheck {
         System.out.println("Все одинаковые символы в столбце: "+result2);
 
         MatrixCheck.extractDiagonal(board);
+
+        char[][] board2 = new char[][] {
+                {'_', '_', '_', '_', '_'},
+                {'_', '_', '_', '_', '_'},
+                {'X', 'X', 'X', 'X', 'X'},
+                {'_', '_', '_', '_', '_'},
+                {'_', '_', '_', '_', '_'}
+        };
+
+        boolean result3=MatrixCheck.isWin(board2);
+
+        System.out.println("Выигрыш: "+ result3);
+
+
     }
 }
