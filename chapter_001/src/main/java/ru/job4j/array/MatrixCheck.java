@@ -3,29 +3,23 @@ package ru.job4j.array;
 public class MatrixCheck {
 
     public static boolean monoHorizontal(char[][] board, int row) {
-        boolean result = false;
-        int count=0;
+        boolean result = true;
         for (int i=0;i<board.length;i++ ) {
-            if (board[row][i] == 'X') {
-                count++;
+            if (board[row][i] != 'X') {
+                result=false;
+                break;
             }
         }
-            if (count==(board.length)) {
-                result = true;
-            }
         return result;
     }
 
     public static boolean monoVertical(char[][] board, int column) {
-        boolean result = false;
-        int count=0;
+        boolean result = true;
         for (int i=0;i<board[0].length;i++ ) {
-            if (board[i][column] == 'X') {
-                count++;
+            if (board[i][column] != 'X') {
+                result=false;
+                break;
             }
-        }
-        if (count==(board.length)) {
-            result = true;
         }
         return result;
     }
@@ -58,11 +52,11 @@ public class MatrixCheck {
     public static void main(String[] args) {
 
         char[][] board = new char[][] {
-                {'s', 'X', 's'},
+                {'s', 'X', 'd'},
                 {'u','X','f'},
                 {'d', 'X', 'd'}
         };
-        boolean result=MatrixCheck.monoHorizontal(board,1);
+        boolean result=MatrixCheck.monoHorizontal(board,0);
         System.out.println("Все одинаковые символы в строке: "+result);
 
         boolean result2=MatrixCheck.monoVertical(board,1);
