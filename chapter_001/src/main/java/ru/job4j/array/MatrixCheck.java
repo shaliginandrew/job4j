@@ -75,7 +75,5 @@ public class MatrixCheck {
         boolean result3=MatrixCheck.isWin(board2);
 
         System.out.println("Выигрыш: "+ result3);
-
-
     }
 }
