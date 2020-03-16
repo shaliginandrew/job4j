@@ -15,7 +15,7 @@ public class MatrixCheck {
 
     public static boolean monoVertical(char[][] board, int column) {
         boolean result = true;
-        for (int i=0;i<board[0].length;i++ ) {
+        for (int i=0;i<board.length;i++ ) {
             if (board[i][column] != 'X') {
                 result=false;
                 break;
@@ -54,7 +54,7 @@ public class MatrixCheck {
         char[][] board = new char[][] {
                 {'s', 'X', 'd'},
                 {'u','X','f'},
-                {'d', 'X', 'd'}
+                {'d', 'z', 'd'}
         };
         boolean result=MatrixCheck.monoHorizontal(board,0);
         System.out.println("Все одинаковые символы в строке: "+result);
