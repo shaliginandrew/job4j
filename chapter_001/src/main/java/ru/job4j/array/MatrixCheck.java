@@ -4,9 +4,9 @@ public class MatrixCheck {
 
     public static boolean monoHorizontal(char[][] board, int row) {
         boolean result = true;
-        for (int i=0;i<board.length;i++ ) {
+        for (int i = 0; i < board.length; i++) {
             if (board[row][i] != 'X') {
-                result=false;
+                result = false;
                 break;
             }
         }
@@ -15,9 +15,9 @@ public class MatrixCheck {
 
     public static boolean monoVertical(char[][] board, int column) {
         boolean result = true;
-        for (int i=0;i<board.length;i++ ) {
+        for (int i = 0; i < board.length; i++) {
             if (board[i][column] != 'X') {
-                result=false;
+                result = false;
                 break;
             }
         }
@@ -27,7 +27,7 @@ public class MatrixCheck {
     public static char[] extractDiagonal(char[][] board) {
         System.out.println("Заполнить одномерный массив элементами диагонали: ");
         char[] rsl = new char[board.length];
-        for ( int i=0;i<board.length;i++ ) {
+        for (int i = 0; i < board.length; i++) {
             rsl[i] = board[i][i];
             System.out.println(rsl[i]);
         }
@@ -36,7 +36,7 @@ public class MatrixCheck {
 
     public static boolean isWin(char[][] board2) {
         boolean result = false;
-        for ( int i=0;i<board2.length;i++) {
+        for (int i = 0; i < board2.length; i++) {
             if (board2[i][i] == 'X') {
                 if (monoHorizontal(board2, i) || monoVertical(board2, i)) {
                     result = true;
@@ -53,15 +53,14 @@ public class MatrixCheck {
 
         char[][] board = new char[][] {
                 {'s', 'X', 'd'},
-                {'u','X','f'},
+                {'u', 'X', 'f'},
                 {'d', 'z', 'd'}
         };
-        boolean result=MatrixCheck.monoHorizontal(board,0);
-        System.out.println("Все одинаковые символы в строке: "+result);
+        boolean result = MatrixCheck.monoHorizontal(board, 0);
+        System.out.println("Все одинаковые символы в строке: " + result);
 
-        boolean result2=MatrixCheck.monoVertical(board,1);
-        System.out.println("Все одинаковые символы в столбце: "+result2);
-
+        boolean result2 = MatrixCheck.monoVertical(board, 1);
+        System.out.println("Все одинаковые символы в столбце: " + result2);
         MatrixCheck.extractDiagonal(board);
 
         char[][] board2 = new char[][] {
@@ -72,8 +71,8 @@ public class MatrixCheck {
                 {'_', '_', '_', '_', '_'}
         };
 
-        boolean result3=MatrixCheck.isWin(board2);
+        boolean result3 = MatrixCheck.isWin(board2);
 
-        System.out.println("Выигрыш: "+ result3);
+        System.out.println("Выигрыш: " + result3);
     }
 }

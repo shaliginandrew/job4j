@@ -6,7 +6,7 @@ public class EndsWith {
         // проверить. что массив word имеет последние элементы одинаковые с post
         for (int i = (post.length - 1); i >= 0; i--) {
                 if (post[i] != (word[(word.length - post.length) + i])) {
-                    result=false;
+                    result = false;
                     break;
                 }
             }
@@ -15,8 +15,8 @@ public class EndsWith {
 
     public static void main(String[] args) {
 
-        char[] word = new char[]{'H', 'e','l', 'l', 'o'};
-        char[] post = new char[]{ 'l','l','o'};
+        char[] word = new char[]{'H', 'e', 'l', 'l', 'o'};
+        char[] post = new char[]{'l', 'l', 'o'};
         boolean result = endsWith(word, post);
         System.out.println(result);
     }

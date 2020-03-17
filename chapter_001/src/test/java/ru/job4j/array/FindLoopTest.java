@@ -19,7 +19,7 @@ public class FindLoopTest {
     @Test
     public void whenArrayHasMinus5Then6() {
         FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 10, 3,14,128,45,-5};
+        int[] input = new int[] {5, 10, 3, 14, 128, 45, -5};
         int value = -5;
         int result = find.indexOf(input, value);
         int expect = 6;
@@ -29,7 +29,7 @@ public class FindLoopTest {
     @Test
     public void whenArrayNoHave4ThenMinus1() {
         FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 10, 3,14,128,45,-5};
+        int[] input = new int[] {5, 10, 3, 14, 128, 45, -5};
         int value = 4;
         int result = find.indexOf(input, value);
         int expect = -1;

@@ -9,21 +9,18 @@ public class SqMax {
                     result = third;
                 }
             }
-        }
-        else if (second > third) {
+        }   else if (second > third) {
             if (second > forth) {
                 result = first;
             }
-        }
-        else if (third > forth) {
+        }   else if (third > forth) {
             result = second;
         }
         return result;
     }
 
     public static void main(String[] args) {
-        int otv=SqMax.max(4,3,2,1);
+        int otv = SqMax.max(4, 3, 2, 1);
         System.out.println(otv);
-
     }
 }

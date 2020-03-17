@@ -1,9 +1,9 @@
 package ru.job4j.condition;
 
-public class LoginAccess{
+public class LoginAccess {
     public static boolean check(String login) {
         String root = new String("root");
-        boolean access =root.equals(login);
+        boolean access = root.equals(login);
         return access;
     }
 

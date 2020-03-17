@@ -3,7 +3,7 @@ package ru.job4j.loop;
 public class Counter {
     public static int sum(int start, int finish) {
         int sum = 0;
-        for (int i=start;i<=finish;i++) {
+        for (int i = start; i <= finish; i++) {
             sum = sum + i;
         }
         return sum;
@@ -11,9 +11,9 @@ public class Counter {
 
     public static int sumByEven(int start, int finish) {
         int sum = 0;
-        for (int k=start;k<=finish;k++) {
+        for (int k = start; k <= finish; k++) {
             if ((k % 2) == 0) {
-                sum = sum +k ;
+                sum = sum + k;
             }
         }
         return sum;
@@ -28,11 +28,7 @@ public class Counter {
         System.out.println(sum(-1, 10));
 
 // Выводим четные числа в дипазоне
-        int chet=Counter.sumByEven(1,10);
-        System.out.println("Сумма четных чисел "+chet);
-
-
-
+        int chet = Counter.sumByEven(1, 10);
+        System.out.println("Сумма четных чисел " + chet);
     }
-
 }

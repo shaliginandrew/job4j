@@ -5,9 +5,9 @@ public class Fitness {
     public static int calc(int ivan, int nik) {
       int month = 0;
 
-        while(ivan<=nik){
+        while (ivan <= nik) {
             ivan = ivan * 3;
-            nik=nik*2;
+            nik = nik * 2;
             month++;
         }
 
@@ -15,7 +15,7 @@ public class Fitness {
     }
 
     public static void main(String[] args) {
-        int resultat=Fitness.calc(90,100);
+        int resultat = Fitness.calc(90, 100);
         System.out.println(resultat);
     }
 }

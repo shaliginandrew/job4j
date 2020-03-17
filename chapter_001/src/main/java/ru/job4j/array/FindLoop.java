@@ -3,7 +3,7 @@ package ru.job4j.array;
 public class FindLoop {
     public static int indexOf(int[] data, int el) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
-        for (int index=0;index<data.length;index++) {
+        for (int index = 0; index < data.length; index++) {
             if (data[index] == el) {
                 rst = index;
                 break;
@@ -14,7 +14,7 @@ public class FindLoop {
 
     public static int indexOf(int[] data, int el, int start, int finish) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
-        for (int index=start;index<=finish;index++) {
+        for (int index = start; index <= finish; index++) {
             if (data[index] == el) {
                 rst = index;
                 break;
@@ -24,8 +24,8 @@ public class FindLoop {
     }
 
     public static void main(String[] args) {
-       int[] data=new int[] {1,5,14,23,78,155,45} ;
-       int resultat=indexOf(data,23,4,6);
+       int[] data = new int[] {1, 5, 14, 23, 78, 155, 45};
+       int resultat = indexOf(data, 23, 4, 6);
         System.out.println(resultat);
     }
 }
