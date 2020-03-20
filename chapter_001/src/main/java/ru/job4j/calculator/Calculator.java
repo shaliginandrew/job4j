@@ -1,11 +1,9 @@
 package ru.job4j.calculator;
-
 /**
  * Class Calculator для вычисления арифмечтических операций + , / , -
  * @author Andrey Shalygin(shaligin.andrew@gmail.com)
  */
 public class Calculator {
-
     /**
      * Main
      * @param args-args.

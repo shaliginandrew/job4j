@@ -43,14 +43,11 @@ public class MatrixCheck {
                     break;
                 }
             }
-
-
         }
         return result;
     }
 
     public static void main(String[] args) {
-
         char[][] board = new char[][] {
                 {'s', 'X', 'd'},
                 {'u', 'X', 'f'},
@@ -58,11 +55,9 @@ public class MatrixCheck {
         };
         boolean result = MatrixCheck.monoHorizontal(board, 0);
         System.out.println("Все одинаковые символы в строке: " + result);
-
         boolean result2 = MatrixCheck.monoVertical(board, 1);
         System.out.println("Все одинаковые символы в столбце: " + result2);
         MatrixCheck.extractDiagonal(board);
-
         char[][] board2 = new char[][] {
                 {'_', '_', '_', '_', '_'},
                 {'_', '_', '_', '_', '_'},
@@ -70,9 +65,7 @@ public class MatrixCheck {
                 {'_', '_', '_', '_', '_'},
                 {'_', '_', '_', '_', '_'}
         };
-
         boolean result3 = MatrixCheck.isWin(board2);
-
         System.out.println("Выигрыш: " + result3);
     }
 }

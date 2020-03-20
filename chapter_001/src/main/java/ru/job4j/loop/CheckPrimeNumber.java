@@ -1,6 +1,7 @@
 package ru.job4j.loop;
 
 public class CheckPrimeNumber {
+
     public static boolean check(int number) {
         boolean prime = true;
         if (number == 1) {
@@ -14,6 +15,7 @@ public class CheckPrimeNumber {
         }
         return prime;
     }
+
     public static void main(String[] args) {
        boolean result = CheckPrimeNumber.check(6);
         System.out.println(result);

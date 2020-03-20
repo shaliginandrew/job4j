@@ -1,6 +1,7 @@
 package ru.job4j.loop;
 
 public class Counter {
+
     public static int sum(int start, int finish) {
         int sum = 0;
         for (int i = start; i <= finish; i++) {
@@ -18,7 +19,9 @@ public class Counter {
         }
         return sum;
     }
-// Выводим сумму всех числе в диапазоне
+/**
+*Выводим сумму всех числе в диапазоне и выводим четные числа в дипазоне
+ */
     public static void main(String[] args) {
         System.out.println(sum(0, 10));
         System.out.println(sum(3, 8));
@@ -26,8 +29,6 @@ public class Counter {
         System.out.println(sum(55, 100));
         System.out.println(sum(30, 40));
         System.out.println(sum(-1, 10));
-
-// Выводим четные числа в дипазоне
         int chet = Counter.sumByEven(1, 10);
         System.out.println("Сумма четных чисел " + chet);
     }

@@ -4,6 +4,7 @@ package ru.job4j.loop;
 Если последовательное сложение не дает нужного числа, то выйти.
  */
 public class SeqNumber {
+
     public static void main(String[] args) {
         calc(6);
     }
