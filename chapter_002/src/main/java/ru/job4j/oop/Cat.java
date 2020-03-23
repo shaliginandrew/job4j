@@ -5,7 +5,8 @@ public class Cat {
     private String food;
     private String name;
 
-    public void show() {
+    public void show()
+    {
         System.out.println(this.name + this.food);
     }
 
@@ -13,7 +14,8 @@ public class Cat {
         this.food = meat;
     }
 
-    public void giveNick(String nick) {
+    public void giveNick(String nick)
+    {
         this.name = nick;
     }
 
