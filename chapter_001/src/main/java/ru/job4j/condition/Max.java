@@ -8,19 +8,18 @@ public class Max {
     }
 
     public static int max(int one, int two, int three) {
-        int result = max(one, two) > three ? max(one, two) : three;
-        return result;
-    }
+        return max(one, max(two, three));
+     }
 
     public static int max(int one, int two, int three, int four) {
-        int result = max(one, two, three) > four ? max(one, two, three) : four;
-        return result;
+        return max(one, max(two, three, four));
+
     }
 
     public static void main(String[] args) {
         int rez1 = Max.max(7, 6);
-        int rez2 = Max.max(9, 11, 11);
-        int rez3 = Max.max(15, 11, 11, 12);
+        int rez2 = Max.max(9, 12, 11);
+        int rez3 = Max.max(15, 11, 11, 18);
         System.out.println(rez1);
         System.out.println(rez2);
         System.out.println(rez3);
