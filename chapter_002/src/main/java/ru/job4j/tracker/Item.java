@@ -6,7 +6,7 @@ public class Item {
     }
 
     public static void main(String[] args) {
-       String name = "example";
-       Item item = new Item(name);
+        String name = "example";
+        Item item = new Item(name);
     }
 }
