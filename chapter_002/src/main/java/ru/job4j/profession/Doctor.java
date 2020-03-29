@@ -2,9 +2,9 @@ package ru.job4j.profession;
 
 public class Doctor extends Profession {
 
-    Diagnose diagnose;
-    boolean whiteRobe;
-    String badge;
+    private Diagnose diagnose;
+    private boolean whiteRobe;
+    private String badge;
 
 
     public Diagnose heal(Pacient pacient) {

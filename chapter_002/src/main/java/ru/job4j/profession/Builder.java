@@ -2,7 +2,7 @@ package ru.job4j.profession;
 
 public class Builder extends Engineer {
 
-    boolean casque;
+    private boolean casque;
 
     public void buildHome() {
 
