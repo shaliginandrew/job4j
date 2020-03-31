@@ -90,5 +90,18 @@ public class Tracker {
         }
          return result;
     }
+
+    public boolean delete(String id) {
+        boolean result = false;
+        if (indexOf(id) != -1) {
+            items[indexOf(id)] = null;
+            System.arraycopy(items, indexOf(id) + 1, items, indexOf(id), position - indexOf(id));
+            items[position - 1] = null;
+            position--;
+            result = true;
+        }
+        return result;
+    }
+
 }
 
