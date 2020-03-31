@@ -16,7 +16,7 @@ public class Shop {
             System.out.println("Заполняем массив: ");
             products[0] = new Product("Milk", 10);
             products[1] = new Product("Bread", 4);
-            products[2] = null;
+            products[2] = new Product("Water", 10);
             products[3] = new Product("Egg", 19);
             for (int i = 0; i < products.length; i++) {
                 Product product = products[i];
@@ -26,7 +26,7 @@ public class Shop {
                     System.out.println("null");
                 }
             }
-            products = delete(products, 2);
+            products = delete(products, 0);
             System.out.println("Новый массив: ");
 
             for (int i = 0; i < products.length; i++) {
