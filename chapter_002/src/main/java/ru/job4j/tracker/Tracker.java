@@ -1,0 +1,79 @@
+package ru.job4j.tracker;
+import java.util.Arrays;
+import java.util.Random;
+/**
+ * @version $Id$
+ * @since 0.1
+ */
+public class Tracker {
+    /**
+     * Массив для хранение заявок.
+     */
+    private final Item[] items = new Item[100];
+
+    /**
+     * Указатель ячейки для новой заявки.
+     */
+    private int position = 0;
+
+    /**
+     * Метод реализующий добавление заявки в хранилище
+     * @param item новая заявка
+     */
+    public Item add(Item item) {
+        item.setId(generateId());
+        this.items[position++] = item;
+        return item;
+    }
+
+    /**
+     * Метод генерирует уникальный ключ для заявки.
+     * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     * @return Уникальный ключ.
+     */
+    private String generateId() {
+        Random rm = new Random();
+        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
+    }
+
+    public Item[] findAll() {
+        Item[] itemsWithoutNull = new Item[position];
+        int size = 0;
+        for (int index = 0; index < position; index++) {
+            Item item = items[index];
+            if (item != null) {
+                itemsWithoutNull[size] = item;
+                size++;
+            }
+        }
+        return Arrays.copyOf(itemsWithoutNull, size);
+    }
+
+    public Item[] findByName(String key) {
+        Item[] itemsEqualNames = new Item[position];
+        int size = 0;
+        for (int index = 0; index < position; index++) {
+            Item item = items[index];
+            if (item.getName().equals(key)) {
+                itemsEqualNames[size] = item;
+                size++;
+            }
+        }
+        return itemsEqualNames;
+
+
+    }
+
+
+    public Item findById(String id) {
+        Item result = null;
+        Item[] itemsEqualsId = new Item[position];
+            for (int index = 0; index < position; index++) {
+            Item item = items[index];
+            if (item.getId().equals(id)) {
+                result = item;
+            }
+        }
+            return result;
+    }
+}
