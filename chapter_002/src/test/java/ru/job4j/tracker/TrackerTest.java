@@ -19,12 +19,19 @@ public class TrackerTest {
     public void whenfindByName() {
         Tracker tracker = new Tracker();
         Item item = new Item("test2");
-
-        Item[] expected = new Item[1];
-        Item[] result =  tracker.findByName("test2");
-        assertThat(expected, is(result));
+        tracker.add(item);
+        Item[] result =  tracker.findByName(item.getName());
+        assertThat(result, is(item));
     }
 
-
-
+    @Test
+    public void whenReplace() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item("Bug");
+        tracker.add(bug);
+        String id = bug.getId();
+        Item bugWithDesc = new Item("Bug with description");
+        tracker.replace(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
+    }
 }

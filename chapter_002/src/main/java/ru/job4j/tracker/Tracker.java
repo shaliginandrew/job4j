@@ -60,20 +60,35 @@ public class Tracker {
             }
         }
         return itemsEqualNames;
-
-
-    }
-
+}
 
     public Item findById(String id) {
-        Item result = null;
-        Item[] itemsEqualsId = new Item[position];
-            for (int index = 0; index < position; index++) {
-            Item item = items[index];
-            if (item.getId().equals(id)) {
-                result = item;
+        // Находим индекс
+        int index = indexOf(id);
+        // Если индекс найден возвращаем item, иначе null
+        return index != -1 ? items[index] : null;
+    }
+
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
             }
         }
-            return result;
+        return rsl;
+    }
+
+
+    public boolean replace(String id, Item item) {
+       boolean result = false;
+        int index = indexOf(id);
+        if (index != -1) {
+            items[index] = item;
+            result = true;
+        }
+         return result;
     }
 }
+
