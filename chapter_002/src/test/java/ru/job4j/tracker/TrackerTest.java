@@ -16,13 +16,14 @@ public class TrackerTest {
     }
 
 
+
     @Test
     public void whenfindByName() {
         Tracker tracker = new Tracker();
         Item item = new Item("test2");
         tracker.add(item);
-        Item[] result =  tracker.findByName(item.getName());
-        assertThat(result, is(item));
+        Item[] result =  tracker.findByName("test2");
+        assertThat(result, is(new Item[] {item}));
     }
 
     @Test

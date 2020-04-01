@@ -59,7 +59,7 @@ public class Tracker {
                 size++;
             }
         }
-        return itemsEqualNames;
+        return Arrays.copyOf(itemsEqualNames, size);
 }
 
     public Item findById(String id) {
@@ -86,6 +86,7 @@ public class Tracker {
         int index = indexOf(id);
         if (index != -1) {
             items[index] = item;
+            item.setId(id);
             result = true;
         }
          return result;
@@ -93,9 +94,10 @@ public class Tracker {
 
     public boolean delete(String id) {
         boolean result = false;
-        if (indexOf(id) != -1) {
-            items[indexOf(id)] = null;
-            System.arraycopy(items, indexOf(id) + 1, items, indexOf(id), position - indexOf(id));
+        int findIndex = indexOf(id);
+        if (findIndex  != -1) {
+            items[findIndex] = null;
+            System.arraycopy(items, findIndex  + 1, items, findIndex, position - findIndex);
             items[position - 1] = null;
             position--;
             result = true;
