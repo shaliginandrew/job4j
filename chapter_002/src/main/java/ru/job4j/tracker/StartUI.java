@@ -32,9 +32,8 @@ public class StartUI {
                 System.out.println("=== Edit item ====");
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
-                //заявка с id не найдена
-                if(tracker.findById(id) != null) {
-                    System.out.print("Enter name for replace: ");
+                 if(tracker.findById(id) != null) {
+                     System.out.print("Enter name for replace: ");
                     String name = scanner.nextLine();
                     Item item = new Item(name);
                     if (tracker.replace(id, item)) {
