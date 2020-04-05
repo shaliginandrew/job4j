@@ -33,8 +33,9 @@ public class Tracker {
      */
     private String generateId() {
         Random rm = new Random();
-        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
+        return String.valueOf(Math.abs(rm.nextLong() + System.currentTimeMillis()));
     }
+
 
     public Item[] findAll() {
          return Arrays.copyOf(items, position);
