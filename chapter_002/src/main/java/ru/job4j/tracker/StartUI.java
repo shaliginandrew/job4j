@@ -1,5 +1,4 @@
 package ru.job4j.tracker;
-
 import java.util.Scanner;
 
 public class StartUI {
@@ -16,6 +15,8 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
+                System.out.println("Новая заявка создана");
+
            } else if (select == 1) {
                 System.out.println("=== List of all Items ====");
                 Item[] items = tracker.findAll();
@@ -32,29 +33,30 @@ public class StartUI {
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
                 //заявка с id не найдена
-                System.out.print("Enter name for replace: ");
-                String name = scanner.nextLine();
-                Item item = new Item(name);
-                if (tracker.replace(id, item)) {
-                    System.out.print("Замена произведена");
+                if(tracker.findById(id) != null) {
+                    System.out.print("Enter name for replace: ");
+                    String name = scanner.nextLine();
+                    Item item = new Item(name);
+                    if (tracker.replace(id, item)) {
+                        System.out.println("Замена произведена");
+                    }
                 } else {
-                    System.out.print("Замена не произведена");
+                    System.out.println("Заявка с id:" + id + " не найдена");
                 }
-
-
-
-             }  else if (select == 3) {
+           } else if (select == 3) {
                 System.out.println("=== Delete item ====");
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
                 Item item = tracker.findById(id);
-                System.out.println("Найдена заявка:" + item.getName());
-                if (tracker.delete(id)) { //true false
-                    System.out.println("Заявка удалена");
+                if (item != null) {
+                    System.out.println("Найдена заявка:" + item.getName());
+                    if (tracker.delete(id)) {
+                        System.out.println("Заявка удалена");
+                    }
                 } else {
-                    System.out.println("Заявка с id = " + id + " не найдена");
+                    System.out.println("Заявка с id:" + id + " не найдена");
                 }
-            } else if (select == 4) {
+           } else if (select == 4) {
                 System.out.println("=== Find item by Id ====");
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
@@ -64,9 +66,21 @@ public class StartUI {
                 } else {
                     System.out.println("Заявка не найдена");
                 }
-           } else if (select == 6) {
+           } else if (select == 5) {
+                System.out.println("=== Find items by name ====");
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    for (Item item : tracker.findByName(name)) {
+                        System.out.println("id:" + item.getId() + ", name:" + item.getName());
+                    }
+                } else {
+                    System.out.println("=== Заявка не найдена ===");
+                }
+          } else if (select == 6) {
                   run = false;
-            }
+          }
         }
     }
 
@@ -77,17 +91,14 @@ public class StartUI {
         System.out.println("2. Edit item");
         System.out.println("3. Delete item");
         System.out.println("4. Find item by Id");
+        System.out.println("5. Find items by name");
         System.out.println("6. Exit Program");
-
-       // добавить остальные пункты меню.
     }
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Tracker tracker = new Tracker();
         new StartUI().showMenu();
         new StartUI().init(scanner, tracker);
-
     }
 }
