@@ -1,22 +1,32 @@
 package ru.job4j.io;
-
 import java.util.Scanner;
 
 public class Matches {
 
-    public int check(int select) {
+    public int check(int select, int number) {
         Scanner input = new Scanner(System.in);
         boolean run = true;
         while (run) {
-            if (select < 4 && select > 0) {
+            if (select < 4 && select > 0 && select <= number) {
                 run = false;
-            } else {
+
+            } else if (select < 4 && select > 0 && select > number) {
+                System.out.println("Необходимо выбрать от 1 до " + number + " спичек, попробуйте еще раз:");
+                select = Integer.valueOf(input.nextLine());
+
+            } else if ((select <= 0 || select > 3) && number >= 3) {
                 System.out.println("Необходимо выбрать от 1 до 3 спичек, попробуйте еще раз:");
+                select = Integer.valueOf(input.nextLine());
+
+            } else if ((select <= 0 || select > 3) && number < 3) {
+                System.out.println("Необходимо выбрать от 1 до " + number + " спичек, попробуйте еще раз:");
                 select = Integer.valueOf(input.nextLine());
             }
         }
-        return select;
-    }
+            return select;
+
+        }
+
 
     public static void main(String[] args) {
         Matches matches = new Matches();
@@ -29,7 +39,7 @@ public class Matches {
         } else {
             System.out.println("Второй игрок берет спички:");
         }
-                int select = matches.check(Integer.valueOf(input.nextLine()));
+                int select = matches.check(Integer.valueOf(input.nextLine()), number);
                 number = number - select;
                 count++;
 
