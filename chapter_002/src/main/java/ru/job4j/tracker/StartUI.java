@@ -32,27 +32,21 @@ public class StartUI {
                 System.out.println("=== Edit item ====");
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
-                 if(tracker.findById(id) != null) {
-                     System.out.print("Enter name for replace: ");
+                System.out.print("Enter name for replace: ");
                     String name = scanner.nextLine();
                     Item item = new Item(name);
                     if (tracker.replace(id, item)) {
                         System.out.println("Замена произведена");
-                    }
-                } else {
-                    System.out.println("Заявка с id:" + id + " не найдена");
+                    } else {
+                    System.out.println("Замена не произведена, заявка с id:" + id + " не найдена");
                 }
            } else if (select == 3) {
                 System.out.println("=== Delete item ====");
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
-                Item item = tracker.findById(id);
-                if (item != null) {
-                    System.out.println("Найдена заявка:" + item.getName());
-                    if (tracker.delete(id)) {
+                        if (tracker.delete(id)) {
                         System.out.println("Заявка удалена");
-                    }
-                } else {
+                    } else {
                     System.out.println("Заявка с id:" + id + " не найдена");
                 }
            } else if (select == 4) {
