@@ -42,8 +42,7 @@ public class Matches {
                 int select = matches.check(Integer.valueOf(input.nextLine()), number);
                 number = number - select;
                 count++;
-
-                System.out.println("Осталось " + number + " спичек" );
+                System.out.println("Осталось " + number + " спичек");
         }
         if (count % 2 == 0) {
             System.out.println("Победил второй игрок");
