@@ -11,8 +11,9 @@ import static org.hamcrest.Matchers.is;
             ByteArrayOutputStream mem = new ByteArrayOutputStream();
             PrintStream out = System.out;
             System.setOut(new PrintStream(mem));
-            String[] data = {"one", "1"};
-            ValidateStubInput input = new  ValidateStubInput(data);
+            ValidateInput input = new ValidateInput(
+                    new StubInput(new String[] {"one", "1"})
+            );
             input.askInt("Enter");
             assertThat(
                     mem.toString(),
@@ -20,13 +21,15 @@ import static org.hamcrest.Matchers.is;
             );
             System.setOut(out);
         }
+
         @Test
         public void whenInvalidMaxNumber() {
             ByteArrayOutputStream mem = new ByteArrayOutputStream();
             PrintStream out = System.out;
             System.setOut(new PrintStream(mem));
-            String[] data = {"7", "1"};
-            ValidateStubInput input = new  ValidateStubInput(data);
+            ValidateInput input = new ValidateInput(
+                    new StubInput(new String[] {"7", "1"})
+            );
             input.askInt("7", 6);
             assertThat(
                     mem.toString(),
