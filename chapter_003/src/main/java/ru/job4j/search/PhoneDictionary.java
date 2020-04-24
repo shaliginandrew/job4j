@@ -31,10 +31,8 @@ public class PhoneDictionary {
         phones.add(new Person("Andrey", "Shalygin", "89258554432", "Podolsk"));
         phones.add(new Person("Sergey", "Shalygin", "89258554435", "Moscow"));
         ArrayList<Person> rsl = phones.find("Shalygin");
-        int i = 0;
-        for (Object t : rsl) {
-            System.out.println(rsl.get(i).getName());
-            i++;
+        for (Person a : rsl) {
+            System.out.println(a.getName());
         }
     }
 }
