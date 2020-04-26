@@ -13,8 +13,9 @@ public class PriorityQueue {
      */
     public void put(Task task) {
         int index = 0;
+
         for (Task element : tasks) {
-            if (element.getPriority() < task.getPriority()) {
+            if (element.getPriority() <= task.getPriority()) {
                 index++;
                 break;
             }
@@ -24,15 +25,5 @@ public class PriorityQueue {
 
     public Task take() {
         return tasks.poll();
-    }
-
-    public static void main(String[] args) {
-        PriorityQueue queue = new PriorityQueue();
-        queue.put(new Task("low", 5));
-        queue.put(new Task("urgent", 1));
-        queue.put(new Task("middle", 3));
-        System.out.println(queue.take().getDesc());
-        System.out.println(queue.take().getDesc());
-        System.out.println(queue.take().getDesc());
     }
 }
