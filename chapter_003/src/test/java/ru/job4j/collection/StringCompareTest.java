@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class StringCompareTest {
     @Test
-    public void whenStringsAreEqualThenZero () {
+    public void whenStringsAreEqualThenZero() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanov",
@@ -19,7 +19,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftLessThanRightResultShouldBeNegative () {
+    public void whenLeftLessThanRightResultShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanov",
@@ -29,7 +29,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftGreaterThanRightResultShouldBePositive () {
+    public void whenLeftGreaterThanRightResultShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov",
@@ -49,7 +49,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondCharOfLeftLessThanRightShouldBeNegative(){
+    public void secondCharOfLeftLessThanRightShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Patrova",
@@ -59,7 +59,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondChar(){
+    public void secondChar() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrova",
@@ -69,7 +69,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void oneChar(){
+    public void oneChar() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "B",
@@ -79,7 +79,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void oneChar2(){
+    public void oneChar2() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "A",
