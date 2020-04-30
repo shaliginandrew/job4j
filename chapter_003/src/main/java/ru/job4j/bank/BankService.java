@@ -22,7 +22,9 @@ public class BankService {
             } else {
                 System.out.println("Такой счет у пользователя уже есть");
             }
-        } else System.out.println("Пользователь не существует");
+        } else {
+            System.out.println("Пользователь не существует");
+        }
     }
 
         public User findByPassport(String passport) {
