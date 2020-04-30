@@ -17,19 +17,15 @@ public class BankService {
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> list = users.get(user);
-            for (Account value : list) {
-                if (!value.equals(account)) {
-                    list.add(account);
-                } else {
-                    System.out.println("Такой счет у пользователя уже есть");
-                }
-            }
+            if (!list.contains(account)) {
+                list.add(account);
             } else {
-            System.out.println("Пользователь не найден!");
-        }
+                System.out.println("Такой счет у пользователя уже есть");
+            }
+        } else System.out.println("Пользователь не существует");
     }
 
-    public User findByPassport(String passport) {
+        public User findByPassport(String passport) {
         User result = null;
         for (User key : users.keySet()) {
          if (key.getPassport().equals(passport)) {
