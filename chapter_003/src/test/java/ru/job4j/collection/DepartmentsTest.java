@@ -28,6 +28,5 @@ public class DepartmentsTest {
         List<String> expect = Arrays.asList("K2/SK1", "K1/SK1");
         Departments.sortDesc(input);
         assertThat(input, is(expect));
-
     }
 }
