@@ -1,4 +1,4 @@
-package ru.job4j.ru.lambda;
+package ru.job4j.lambda;
 
 import org.junit.Test;
 import java.util.Arrays;

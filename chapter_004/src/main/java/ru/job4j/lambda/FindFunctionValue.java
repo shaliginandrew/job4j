@@ -14,6 +14,6 @@ public class FindFunctionValue {
     }
 
     public static void main(String[] args) {
-        System.out.println(diapason(2, 5, x -> Math.pow(2, x)));
+        System.out.println(diapason(2, 5, x -> 2 * x + 1));
     }
 }
