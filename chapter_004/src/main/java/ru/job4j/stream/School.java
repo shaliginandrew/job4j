@@ -13,10 +13,10 @@ public class School {
         School school = new School();
         Predicate<Student> predict10A =  student10A -> student10A.getScore() >= 70 && student10A.getScore() < 100;
         List<Student> students = List.of(
-                new Student(80,"Иванов"),
-                new Student(90,"Зайцев"),
-                new Student(60,"Петров"),
-                new Student(40,"Сидоров")
+                new Student(80, "Иванов"),
+                new Student(90, "Зайцев"),
+                new Student(60, "Петров"),
+                new Student(40, "Сидоров")
         );
         List<Student> student10A = school.collect(students, predict10A);
         System.out.println("10А");
