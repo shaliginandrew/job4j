@@ -20,7 +20,7 @@ public class PhoneDictionary {
         Predicate<Person> combine = person -> person.getName().contains(key) || person.getSurname().contains(key)
                 || person.getPhone().contains(key) || person.getAddress().contains(key);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
@@ -33,7 +33,7 @@ public class PhoneDictionary {
         phones.add(new Person("Andrey", "Shalygin", "89258554432", "Podolsk"));
         phones.add(new Person("Sergey", "Shalygin", "89258554435", "Moscow"));
         ArrayList<Person> rsl = phones.find("Shalygin");
-        for (Person a : rsl) {
+        for (var a : rsl) {
             System.out.println(a.getName());
         }
     }
