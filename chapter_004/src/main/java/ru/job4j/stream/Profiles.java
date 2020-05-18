@@ -12,10 +12,10 @@ public class Profiles {
 
     public static void main(String[] args) {
         Profiles profil = new Profiles();
-        List<Address> profile1 = List.of(new Address("Подольск","Ревпроспект", 20, 36));
-        List<Address> profile2 = List.of(new Address("Климовск","Заводская", 1, 10));
-        List<Address> profile3 = List.of(new Address ("Климовск","Заводская", 1, 10));
-        List<Address> profile4 = List.of(new Address ("Москва","Проспект Вернадского", 2, 5));
+        List<Address> profile1 = List.of(new Address("Подольск", "Ревпроспект", 20, 36));
+        List<Address> profile2 = List.of(new Address("Климовск", "Заводская", 1, 10));
+        List<Address> profile3 = List.of(new Address("Климовск", "Заводская", 1, 10));
+        List<Address> profile4 = List.of(new Address("Москва", "Проспект Вернадского", 2, 5));
         List<Profile> st = new ArrayList<>();
         st.add((Profile) profile1);
         st.add((Profile) profile2);
