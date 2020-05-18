@@ -11,11 +11,10 @@ public class Group {
 
     public static Map<String, Set<String>> sections(List<Student> students) {
         return students.stream().flatMap(student -> student.getUnits().stream().map(unit -> new Holder(unit, student.getName())))  // собираем объект Holder с unit и name
-                .collect( // собираем карту
-                Collectors.groupingBy(t -> t.key, // определяем группировку
+                .collect(Collectors.groupingBy(t -> t.key, // определяем группировку
                         Collector.of(
                                 HashSet::new, // аккумулятор.
-                                (set, el) -> set.add(el.value),// как добавлять данные.
+                                (set, el) -> set.add(el.value), // как добавлять данные.
                                         (left, right) -> { // для агрегации.
                                             left.addAll(right);
                                             return left;

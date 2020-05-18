@@ -18,7 +18,7 @@ public class Fi {
         System.out.println(atts[1].getName());
         System.out.println(atts[2].getName());
         System.out.println("Сравниваем строки по убыванию длины по полю size:");
-        Comparator<Attachment> cmpDescSize = (left, right) -> Integer.compare(right.getSize(),left.getSize());
+        Comparator<Attachment> cmpDescSize = (left, right) -> Integer.compare(right.getSize(), left.getSize());
         sort(atts, cmpDescSize);
         System.out.println(atts[0].getSize());
         System.out.println(atts[1].getSize());
