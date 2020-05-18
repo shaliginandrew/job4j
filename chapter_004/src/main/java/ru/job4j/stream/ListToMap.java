@@ -4,7 +4,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ToMap {
+public class ListToMap {
+
+    public static Map<String, Student> convertListToMap(List<Student> students) {
+        return  students.stream().collect(Collectors.toMap(Student::getSurname, student -> student));
+    }
+
     public static void main(String[] args) {
         List<Student> students = List.of(
                 new Student(80, "Иванов"),
@@ -12,6 +17,6 @@ public class ToMap {
                 new Student(60, "Петров"),
                 new Student(40, "Сидоров")
         );
-        Map<String, Student> studetsToMap = students.stream().distinct().collect(Collectors.toMap(Student::getSurname, Student -> Student));
+        System.out.println(convertListToMap(students).values());
     }
 }
