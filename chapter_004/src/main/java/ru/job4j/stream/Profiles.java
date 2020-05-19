@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Profiles {
     List<Address> collect(List<Profile> profiles) {
@@ -23,8 +22,7 @@ public class Profiles {
         st.add(profile3);
         st.add(profile4);
         List<Address> rsl = profil.collect(st);
-        rsl.stream().flatMap(str -> Stream.of(str.getCity() + " ", str.getStreet() + " ", str.getHome() + " ", str.getApartment() + System.lineSeparator()))
-                .forEach(System.out::print);
+        System.out.println(rsl);
     }
 }
 
