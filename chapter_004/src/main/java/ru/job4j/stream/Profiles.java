@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Profiles {
     List<Address> collect(List<Profile> profiles) {
@@ -12,18 +13,18 @@ public class Profiles {
 
     public static void main(String[] args) {
         Profiles profil = new Profiles();
-        List<Address> profile1 = List.of(new Address("Подольск", "Ревпроспект", 20, 36));
-        List<Address> profile2 = List.of(new Address("Климовск", "Заводская", 1, 10));
-        List<Address> profile3 = List.of(new Address("Климовск", "Заводская", 1, 10));
-        List<Address> profile4 = List.of(new Address("Москва", "Проспект Вернадского", 2, 5));
+        Profile profile1 = new Profile(new Address("Подольск", "Ревпроспект", 20, 36));
+        Profile profile2 = new Profile(new Address("Климовск", "Заводская", 1, 10));
+        Profile profile3 = new Profile(new Address("Климовск", "Заводская", 1, 10));
+        Profile profile4 =  new Profile(new Address("Москва", "Проспект Вернадского", 2, 5));
         List<Profile> st = new ArrayList<>();
-        st.add((Profile) profile1);
-        st.add((Profile) profile2);
-        st.add((Profile) profile3);
-        st.add((Profile) profile4);
+        st.add(profile1);
+        st.add(profile2);
+        st.add(profile3);
+        st.add(profile4);
         List<Address> rsl = profil.collect(st);
-        for (Object value : rsl) {
-            System.out.println(value);
-        }
+        rsl.stream().flatMap(str -> Stream.of(str.getCity() + " ", str.getStreet() + " ", str.getHome() + " ", str.getApartment() + System.lineSeparator()))
+                .forEach(System.out::print);
     }
 }
+
