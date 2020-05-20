@@ -2,18 +2,15 @@ package ru.job4j.collection;
 
 import java.util.Comparator;
 
-import static java.lang.Math.*;
-
 public class DepDescComp implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
-        char[] charLeft = o1.toCharArray();
-        char[] charRight = o2.toCharArray();
-        for (int index = 0; index <= min(charLeft.length, charRight.length); index++) {
-            if (charRight[index] != charLeft[index]) {
-                return Character.compare(charRight[index], charLeft[index]);
-            }
+        String[] o1String= o1.split("/");
+        String[] o2String = o2.split("/");
+        int compare = o2String[0].compareTo(o1String[0]);
+        if (compare == 0) {
+            compare = o1.compareTo(o2);
         }
-        return o1.length() - o2.length();
+        return compare;
     }
 }
